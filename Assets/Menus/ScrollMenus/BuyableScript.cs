@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using ScriptableObjectArchitecture;
 
 public class BuyableScript : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class BuyableScript : MonoBehaviour
     [SerializeField] protected Image _contentIcon;
 
     [Tooltip("The is relevant only for the prefab")]
-    [SerializeField] TMP_Text _buyButtonLabel;
-    [SerializeField] Image _lockedIcon;
-    [SerializeField] Image _priceIcon;
+    [SerializeField] protected TMP_Text _buyButtonLabel;
+    [SerializeField] protected Image _lockedIcon;
+    [SerializeField] protected Image _priceIcon;
 
-    private void Start()
+    [SerializeField] protected FloatVariable displayedMoneyTime;
+
+   private void Start()
     {
         // TODO check save - is bought?
 
@@ -49,22 +52,30 @@ public class BuyableScript : MonoBehaviour
             return false;
         } else
         {
-            Globals.gdata.setMoneyTime(Globals.gdata.moneyTime - _price);
             _isBought = true;
             SetBought();
-            // TODO save bought
+
+            Globals.gdata.setMoneyTime(Globals.gdata.moneyTime - _price); // saves on its own
+            displayedMoneyTime.Value = Globals.gdata.moneyTime;
             return true;
         }
     }
 
-    private void SetBought()
+    protected void SetBought()
     {
         _buyButtonLabel.text = "select";
         _lockedIcon.sprite = Globals.unlockedIcon;
+        SaveBought();
     }
 
     // To be overwriten by scripts inheriting this
     public virtual void UseContent()
+    {
+
+    }
+
+    // To be overwriten by scripts inheriting this
+    public virtual void SaveBought()
     {
 
     }

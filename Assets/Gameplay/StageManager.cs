@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using ScriptableObjectArchitecture;
 
 /// <summary>
 /// This class contains the MINIMAL requirements to work as a stage manager
@@ -11,9 +11,13 @@ public class StageManager : MonoBehaviour
     [SerializeField]
     private List<Hazard> hazards = new List<Hazard>();
 
+    [SerializeField]
+    private ObjectGameEvent newHazard;
+
     protected void Awake()
     {
         Globals.stageManager = this;
+
     }
 
     public void registerHazard(Hazard newHazard)

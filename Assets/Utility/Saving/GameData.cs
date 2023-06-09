@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 
 /// <summary>
 /// All GamaData that needs to be saved
@@ -13,8 +10,11 @@ public class GameData
     public float moneyTime { get; private set; }
 
     public bool[] levelsUnlocked;
-    public bool[] extraParticlesUnlocked;
-    public bool[] extraModelsUnlocked;
+    public bool[] particlesUnlocked;
+    public bool[] modelsUnlocked;
+
+    public int particlesSelected;
+    public int modelSelected;
 
     public float sfxVolume;
     public float musicVolume;
@@ -22,16 +22,19 @@ public class GameData
 
     public GameData()
     {
-        // TODO change to read in later?
-        Debug.Log("new Gamedata created");
-        moneyTime = 100;
+        moneyTime = 0;
 
-        levelsUnlocked = new bool[3];
-        levelsUnlocked[0] = true;
+        levelsUnlocked = new bool[10];
+        particlesUnlocked = new bool[10];
+        modelsUnlocked = new bool[10];
+
         for (int i = 1; i < levelsUnlocked.Length; i++)
         {
             levelsUnlocked[i] = false;
         }
+
+        particlesSelected = 0;
+        modelSelected = 0;
 
         sfxVolume = 1;
         musicVolume = 1;

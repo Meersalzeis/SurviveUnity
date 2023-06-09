@@ -36,7 +36,7 @@ public class GameplayUI : MonoBehaviour
         if (! isCalmPeriod)
         {
             thisRoundMoneyTime += Time.fixedDeltaTime;
-            timelabel.text = Globals.floatToTimestamp(thisRoundMoneyTime);
+            timelabel.text = Globals.floatToMoneytime(thisRoundMoneyTime);
         }
     }
 }

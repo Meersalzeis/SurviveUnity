@@ -10,6 +10,7 @@ using UnityEngine;
 public static class SaveSystem
 {
     // https://www.youtube.com/watch?v=a4ImOZMPjvQ&ab_channel=Quick%27nDirty
+    // Debug.Log(Application.persistentDataPath);
 
     public static void Save()
     {
@@ -34,6 +35,16 @@ public static class SaveSystem
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream fs = new FileStream(GetPath(), FileMode.Open);
         Globals.gdata = formatter.Deserialize(fs) as GameData;
+
+        // DEBUG VALUES
+        Globals.gdata.levelsUnlocked[0] = false;
+        Globals.gdata.levelsUnlocked[1] = false;
+        Globals.gdata.levelsUnlocked[2] = false;
+        Globals.gdata.levelsUnlocked[3] = true;
+        Globals.gdata.levelsUnlocked[4] = false;
+        Globals.gdata.levelsUnlocked[5] = false;
+
+        Globals.gdata.setMoneyTime(10000f);
     }
 
     private static string GetPath()

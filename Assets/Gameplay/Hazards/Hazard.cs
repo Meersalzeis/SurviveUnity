@@ -14,9 +14,13 @@ public class Hazard : MonoBehaviour
     [SerializeField]
     protected GameEvent OnHitEvent;
 
+    [SerializeField]
+    protected ObjectGameEvent NewHazardEvent;
+
     protected void Start()
     {
         Globals.stageManager.registerHazard(this);
+        //NewHazardEvent.Raise(gameObject);
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)

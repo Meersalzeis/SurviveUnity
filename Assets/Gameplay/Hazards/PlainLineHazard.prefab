@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 7435305778765547980}
   OnHitEvent: {fileID: 11400000, guid: de36196315ea1f6489002d92a191b037, type: 2}
+  NewHazardEvent: {fileID: 11400000, guid: de6b43cee36fb694cbf81f76f8a01b22, type: 2}
   _fallingTime: 1
 --- !u!61 &7435305778765547980
 BoxCollider2D:

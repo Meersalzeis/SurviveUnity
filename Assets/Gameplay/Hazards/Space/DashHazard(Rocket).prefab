@@ -100,7 +100,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 8280915928923966726}
   OnHitEvent: {fileID: 11400000, guid: de36196315ea1f6489002d92a191b037, type: 2}
-  speed: 7.5
+  NewHazardEvent: {fileID: 11400000, guid: de6b43cee36fb694cbf81f76f8a01b22, type: 2}
+  moveSpeed:
+    _useConstant: 0
+    _constantValue: 0
+    _variable: {fileID: 11400000, guid: ad8734e2b71587a43957427ab191b9df, type: 2}
 --- !u!60 &8280915928923966726
 PolygonCollider2D:
   m_ObjectHideFlags: 0

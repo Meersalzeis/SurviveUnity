@@ -8,7 +8,7 @@ public class DebugUtil : MonoBehaviour
     /// A Script that contains whatever needed to set up scenes to debug them
     /// </summary>
     
-    void Start()
+    void Awake()
     {
         Globals.Initialize();
     }

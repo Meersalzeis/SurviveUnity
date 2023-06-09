@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public delegate void aGDataChanged();
-
 /// <summary>
 /// This singleton serves as a global reference storage
 /// </summary>
@@ -25,9 +23,14 @@ public static class Globals
 
     // Save and GameData
     public static GameData gdata;
+    public static LevelOption mostRecentLevel;
 
-    // Gameplay
+
+    // Gameplay and Initializing thereof
     public static StageManager stageManager;
+    public static ParticleSystem[] particleSytemList;
+    public static GameObject[] modelList;
+
 
     public static void Initialize()
     {
@@ -48,7 +51,7 @@ public static class Globals
 
     }
 
-    public static string floatToTimestamp(float moneyTime)
+    public static string floatToMoneytime(float moneyTime)
     {
         int mins = (int) Math.Floor( moneyTime / 60);
         double secs = (Math.Truncate( moneyTime * 100 ) / 100) % ( 60 ) ; // * 100 and / 10 to truncate to 2 places after comma

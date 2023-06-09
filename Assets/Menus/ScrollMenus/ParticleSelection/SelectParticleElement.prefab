@@ -123,7 +123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7437746904600922396}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuyableScript, Assembly-CSharp
         m_MethodName: OnButtonPressed
         m_Mode: 1
@@ -456,10 +456,10 @@ RectTransform:
   m_Father: {fileID: 3436817627019075121}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 249.20001, y: 0.00011444092}
-  m_SizeDelta: {x: -498.4, y: 0.000030518}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 750, y: 0}
+  m_SizeDelta: {x: -500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &759773256957877396
 CanvasRenderer:
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -499.3131, y: 0, z: -500.70776, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -569,9 +569,9 @@ GameObject:
   - component: {fileID: 3436817627019075121}
   - component: {fileID: 3739187966990539237}
   - component: {fileID: 2869977079505928815}
-  - component: {fileID: 7437746904600922396}
+  - component: {fileID: 69467562950821698}
   m_Layer: 5
-  m_Name: SelectLevelElement
+  m_Name: SelectParticleElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7437746904600922396
+--- !u!114 &69467562950821698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -647,14 +647,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8155826150491412877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d915c53167b67d642b7bbfb609dac53f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3605e1e55b14fbe46ad141c570b7f55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 200
+  _price: 0
+  _contentIcon: {fileID: 66544367578267140}
   _buyButtonLabel: {fileID: 2210108037267481071}
   _lockedIcon: {fileID: 748712344162611222}
   _priceIcon: {fileID: 799619078960615185}
-  LevelSceneNr: 0
+  displayedMoneyTime: {fileID: 11400000, guid: d3d3ee7081f62ba4f9bdbd24b110316d, type: 2}
+  _particleNr: 0
 --- !u!1 &8183383712435737175
 GameObject:
   m_ObjectHideFlags: 0

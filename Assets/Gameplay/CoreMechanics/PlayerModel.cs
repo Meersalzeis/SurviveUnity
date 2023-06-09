@@ -1,4 +1,5 @@
 using ScriptableObjectArchitecture;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,5 +37,10 @@ public class PlayerModel : MonoBehaviour
             // TODO Rotation
             transform.position = mousePos;
         }
+    }
+
+    internal void addParticles(ParticleSystem particleSystem)
+    {
+        throw new NotImplementedException();
     }
 }

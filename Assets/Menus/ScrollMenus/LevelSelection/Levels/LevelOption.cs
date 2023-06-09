@@ -5,12 +5,13 @@ using UnityEngine;
 
 /// <summary>
 /// A scriptable object that stores all information
-/// needed to set up a random level
+/// needed to set up a level
 /// </summary>
-[CreateAssetMenu(fileName = "Data", menuName = "Menu/LevelOption", order = 1)]
+[CreateAssetMenu(fileName = "LevelOption", menuName = "Menu/LevelOption", order = 1)]
 public class LevelOption : ScriptableObject
 {
-    public int LevelNr;
+    public int levelNr;
     public float costs;
-    public Sprite Icon;
+    public Sprite icon;
+    public Sprite background;
 }
