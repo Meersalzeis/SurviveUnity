@@ -13,8 +13,7 @@ public class RandomStageManager : StageManager
 
     // I have also realized it would probably be better to initiate the spawn locations in the repective Hazard classes, but won't change it's not that important
 
-    [SerializeField]
-    protected int _seed = 0;
+    [SerializeField] protected int _seed = 0;
 
     protected const float HAZARD_PERIOD_LENGTH = 12;
     protected const float CALM_PERIOD_LENGTH = 3;
@@ -107,7 +106,6 @@ public class RandomStageManager : StageManager
         } else
         {
             SpawnDashHazard();
-            Debug.Log("DashHazard");
         }
 
     }
@@ -129,6 +127,8 @@ public class RandomStageManager : StageManager
 
         GameObject newSideHazard = Instantiate(_sideHazard, justOutsideScreen, Quaternion.Euler(0, 0, Random.Range(0f, 360f)));
         SideHazard newHazardScript = newSideHazard.GetComponent<SideHazard>();
+
+        Debug.Log("Cross position is " + willCrossThisPoint+ ", justOutsideScreen is " + justOutsideScreen);
 
         // Set velocity
         newHazardScript.velocity = (willCrossThisPoint - justOutsideScreen);
@@ -175,6 +175,7 @@ public class RandomStageManager : StageManager
         Vector3 offset = new Vector3(-Globals.viewInUnits.width / 2, -Globals.viewInUnits.height / 2, 0);
         float randomX = Random.Range((float) Globals.x10th, Globals.viewInUnits.width - Globals.x10th);
         float randomY = Random.Range((float) Globals.y10th, Globals.viewInUnits.height - Globals.y10th);
+        Debug.Log("Globals.x10th = " + Globals.x10th + ", " + Globals.viewInUnits.width + " = Globals.viewInUnits.width");
         return new Vector3(randomX, randomY, 0) + offset;
     }
 

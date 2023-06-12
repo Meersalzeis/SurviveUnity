@@ -5340,7 +5340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazards: []
-  newHazard: {fileID: 0}
+  newHazard: {fileID: 11400000, guid: de6b43cee36fb694cbf81f76f8a01b22, type: 2}
   _seed: 0
   CalmPeriodStarts: {fileID: 11400000, guid: dd7c6cb451dbed24099f93e37e50a2ab, type: 2}
   HazardPeriodStarts: {fileID: 11400000, guid: ad7c6b9990d0eb34b8a10b7e6081c535, type: 2}
@@ -5371,7 +5371,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 991444910}
         m_TargetAssemblyTypeName: StageManager, Assembly-CSharp
-        m_MethodName: registerHazard
+        m_MethodName: 
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5541,11 +5541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystems:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   modelList:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!1001 &781714629710480544
 PrefabInstance:

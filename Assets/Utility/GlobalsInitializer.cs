@@ -9,7 +9,9 @@ public class GlobalsInitializer : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("heh? 1");
         Globals.Initialize();
+        Debug.Log("heh? 2");
 
         Globals.modelList = modelList;
         Globals.particleSytemList = particleSystems;

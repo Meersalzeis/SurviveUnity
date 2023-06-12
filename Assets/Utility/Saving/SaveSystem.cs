@@ -14,14 +14,26 @@ public static class SaveSystem
 
     public static void Save()
     {
+        string FilePath = Application.persistentDataPath;
+        FilePath = Path.Combine(FilePath, "GameSave.txt");
+
+        StreamWriter savefile = new StreamWriter(FilePath, true);
+        savefile.WriteLine("test");
+
+        StreamReader sr = new StreamReader(FilePath);
+        Debug.Log(sr.ReadLine());
+        sr.Close();
+        /**
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream fs = new FileStream(GetPath(), FileMode.Create);
         formatter.Serialize(fs, Globals.gdata);
         fs.Close();
+        **/
     }
 
     public static void Load()
     {
+        Debug.Log("Loaded from " + Application.persistentDataPath);
         if (!File.Exists(GetPath()))
         {
             Debug.Log("Made new Game Data");

@@ -48,7 +48,12 @@ public class GameData
     public bool setMoneyTime(float newVal)
     {
         moneyTime = newVal;
-        SaveSystem.Save();
         return true;
     }
+
+    public void saveprogress()
+    {
+        SaveSystem.Save();
+    }
+
 }

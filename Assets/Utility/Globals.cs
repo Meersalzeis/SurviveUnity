@@ -41,14 +41,16 @@ public static class Globals
         // Camera.main.rect is not viewInUnits! It's not 0,0 to 1,1
         var origin = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
         var extend = Camera.main.ScreenToWorldPoint(new Vector3(screenInPixels.width, screenInPixels.height, 0));
-        viewInUnits = new Rect( new Vector2(0,0) , new Vector2(extend.x-origin.x, extend.y-origin.y) );
+        Debug.Log("ScreenInPixels = " + screenInPixels + " makes origin&extend " + origin + " and " + extend);
+        viewInUnits = new Rect(new Vector2(0, 0), new Vector2(extend.x - origin.x, extend.y - origin.y));
 
         //Debug.Log("View is " + viewInUnits);
 
-        x10th = (float)viewInUnits.width / 10;
-        y10th = (float)viewInUnits.height / 10;
+        x10th = (float) viewInUnits.width / 10;
+        y10th = (float) viewInUnits.height / 10;
         viewSizeInUnits = viewInUnits.width * viewInUnits.height;
 
+        Debug.Log("Globals Initializd");
     }
 
     public static string floatToMoneytime(float moneyTime)
