@@ -6,6 +6,7 @@ public class GlobalsInitializer : MonoBehaviour
 {
     [SerializeField] private ParticleSystem[] particleSystems;
     [SerializeField] private GameObject[] modelList;
+    [SerializeField] private LevelOption mostRecentLevelToInitialize;
 
     void Awake()
     {
@@ -15,6 +16,7 @@ public class GlobalsInitializer : MonoBehaviour
 
         Globals.modelList = modelList;
         Globals.particleSytemList = particleSystems;
+        Globals.mostRecentLevel = mostRecentLevelToInitialize;
     }
 
 }

@@ -55,11 +55,10 @@ public static class Globals
 
     public static string floatToMoneytime(float moneyTime)
     {
-        int mins = (int) Math.Floor( moneyTime / 60);
-        double secs = (Math.Truncate( moneyTime * 100 ) / 100) % ( 60 ) ; // * 100 and / 10 to truncate to 2 places after comma
-
-        return mins < 10 ?
-            "0" + mins.ToString() + ":" + secs.ToString() :
-            mins.ToString() + ":" + secs.ToString();
+        int mins = (int) Math.Floor( moneyTime / 60) ;
+        int secs = (int) Math.Truncate( moneyTime % 60 ) ; // round down to full numbers
+        string moneyTimeMinutesString = mins < 10 ? "0" + mins.ToString() : mins.ToString();
+        string moneyTimeSecondsString = secs < 10 ? "0" + secs.ToString() : secs.ToString();
+        return moneyTimeMinutesString + ":" + moneyTimeSecondsString;
     }
 }

@@ -10,9 +10,7 @@ public class GameplayUI : MonoBehaviour
     private bool isCalmPeriod = true;
     private float thisRoundMoneyTime = 0;
 
-    [SerializeField]
-    private TMP_Text timelabel;
-
+    [SerializeField] private TMP_Text timelabel;
 
     public void OnCalmPeriodStarts()
     {
@@ -27,7 +25,8 @@ public class GameplayUI : MonoBehaviour
     public void OnGameOver()
     {
         Debug.Log("New gdata moneyTime to be set");
-        Globals.gdata.setMoneyTime( Globals.gdata.moneyTime + thisRoundMoneyTime);
+        Globals.gdata.setMoneyTime(Globals.gdata.moneyTime + thisRoundMoneyTime);
+        Globals.gdata.SaveProgress();
         Debug.Log("Gdata moneytime is now " + Globals.gdata.moneyTime);
     }
 

@@ -51,7 +51,7 @@ public class GameData
         return true;
     }
 
-    public void saveprogress()
+    public void SaveProgress()
     {
         SaveSystem.Save();
     }
