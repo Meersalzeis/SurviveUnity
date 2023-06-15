@@ -10,7 +10,7 @@ public class DebugUtil : MonoBehaviour
     
     void Awake()
     {
-        Globals.Initialize();
+        Globals.InternalInitialize();
     }
 
 }

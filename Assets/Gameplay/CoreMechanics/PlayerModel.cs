@@ -15,11 +15,6 @@ public class PlayerModel : MonoBehaviour
     // TODO change shape with movement if modell allows for it
     // TODO calculate dash between movements
 
-    public void OnGameOver()
-    {
-        Scenes.GoToScene(6);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -39,7 +34,7 @@ public class PlayerModel : MonoBehaviour
         }
     }
 
-    internal void addParticles(ParticleSystem particleSystem)
+    void addParticles(ParticleSystem particleSystem)
     {
         throw new NotImplementedException();
     }

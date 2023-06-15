@@ -8,6 +8,7 @@ using UnityEngine.Events;
 /// </summary>
 public static class Globals
 {
+    public static bool wasInitialized = false;
 
     // UI helper
     public static Sprite lockedIcon;
@@ -32,10 +33,12 @@ public static class Globals
     public static GameObject[] modelList;
 
 
-    public static void Initialize()
+    public static void InternalInitialize()
     {
+        wasInitialized = true;
         SaveSystem.Load();
 
+        // Screen Dimension Data
         screenInPixels = Camera.main.pixelRect;
 
         // Camera.main.rect is not viewInUnits! It's not 0,0 to 1,1

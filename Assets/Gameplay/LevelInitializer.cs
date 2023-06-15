@@ -28,8 +28,8 @@ public class LevelInitializer : MonoBehaviour
         // **/
 
         // Background
-        //Debug.Log(lvlOption);
         bgRenderer.sprite = lvlOption.background;
-        bgRenderer.transform.localScale = new Vector3(Globals.viewInUnits.x, Globals.viewInUnits.y, 1);
+        //bgRenderer.transform.localScale = new Vector3(1, 1, 1);   
+        //bgRenderer.transform.localScale = new Vector2(Globals.viewInUnits.x, Globals.viewInUnits.y);
     }
 }
